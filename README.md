@@ -13,7 +13,7 @@ This module is intended for use in node.js serverless applications. It supports 
 ## How to use
 
 First, setup your client in a dedicated module:
-```
+```javascript
 // client.js
 
 import DbClient from 'serverless-pg';
@@ -33,7 +33,7 @@ export default dbClient;
 
 Then, import anywhere in your application and use.
 
-```
+```javascript
 // handler.js
 
 import dbClient from './client';
