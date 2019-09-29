@@ -4,7 +4,7 @@ A PostgreSQL client for serverless applications.
 
 ## About
 
-This module is intended for use in node.js serverless applications. It supports node v6 and above.
+This module is intended for use in node.js serverless applications. It supports node v6 and above. It is simply some boilerplate around the fantastic `pg` library for serverless apps.
 
 ## Installation
 
