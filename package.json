@@ -1,0 +1,38 @@
+{
+  "name": "serverless-pg",
+  "version": "1.0.1",
+  "description": "A PostgreSQL client for serverless applications.",
+  "license": "MIT",
+  "repository": "evbots/serverless-pg",
+  "main": "dist/main.js",
+  "author": {
+    "name": "Evan Botello",
+    "email": "evan.botello@protonmail.com",
+    "url": "https://github.com/evbots"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "webpack",
+    "release": "npm version patch"
+  },
+  "keywords": [
+    "serverless",
+    "postgresql"
+  ],
+  "dependencies": {
+    "@babel/polyfill": "7.6.0",
+    "bluebird": "3.5.5",
+    "pg": "7.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.0",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-env": "7.6.0",
+    "babel-loader": "8.0.6",
+    "rimraf": "2.6.3",
+    "webpack": "4.40.2",
+    "webpack-cli": "3.3.8",
+    "webpack-node-externals": "1.7.2"
+  }
+}
