@@ -1,7 +1,7 @@
 {
   "name": "serverless-pg",
   "version": "0.1.0",
-  "description": "A PostgreSQL client for serverless applications.",
+  "description": "A PostgreSQL client for Node.js serverless applications.",
   "license": "MIT",
   "repository": "evbots/serverless-pg",
   "main": "dist/main.js",

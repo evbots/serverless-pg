@@ -1,12 +1,12 @@
 # serverless-pg
 
-A PostgreSQL client for serverless applications.
+A PostgreSQL client for Node.js serverless applications.
 
 **Note: This library is currently alpha and subject to breaking changes. Please install this dependency using an exact version.**
 
 ## About
 
-This module is intended for use in node.js serverless applications. It supports node v6 and above. It is simply some boilerplate around the fantastic `pg` library for serverless apps.
+This module is intended for use in node.js serverless applications. It supports node v8 and above. It is simply some boilerplate around the fantastic `pg` library for serverless apps.
 
 ## Installation
 
