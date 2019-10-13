@@ -1,5 +1,11 @@
 import { Client } from 'pg';
 
+/**
+ * A function to create a wrapped client instance.
+ *
+ * @param {object} params - client parameters
+ * @returns {object} wrapped client instance
+ */
 const createClient = ({
   config,
   onConnect = () => {},
@@ -10,8 +16,18 @@ const createClient = ({
   let connectedPromise;
   let client;
 
+  /**
+   * A function to return the pg client instance.
+   *
+   * @returns {Client} pg client instance
+   */
   const getClient = () => client;
 
+  /**
+   * A function to connect to the database.
+   *
+   * @returns {undefined} returns after the connection is attempted
+   */
   const connect = async () => {
     if (client === undefined) {
       if (connectedPromise === undefined) {
@@ -27,6 +43,12 @@ const createClient = ({
     }
   };
 
+  /**
+   * A function to create a wrapped client instance.
+   *
+   * @param {...*} queryParams - query parameters
+   * @returns {Promise} resolved query response
+   */
   const query = async (...queryParams) => {
     await connect();
     const beforeResult = beforeQuery(...queryParams);
@@ -35,6 +57,11 @@ const createClient = ({
     return queryResponse;
   };
 
+  /**
+   * A function to end the connection to the database.
+   *
+   * @returns {undefined} returns after the connection is closed
+   */
   const end = async () => {
     if (client !== undefined) {
       await client.end();
@@ -44,6 +71,12 @@ const createClient = ({
     }
   };
 
+  /**
+   * A function to complete a transaction.
+   *
+   * @param {Array} collection - a collection of queries
+   * @returns {undefined} resolved after transaction completes
+   */
   const transaction = async collection => {
     await connect();
     try {

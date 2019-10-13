@@ -4,18 +4,23 @@
   "description": "A PostgreSQL client for Node.js serverless applications.",
   "license": "MIT",
   "repository": "evbots/serverless-pg",
-  "main": "dist/main.js",
+  "main": "lib/index.js",
   "author": {
     "name": "Evan Botello",
     "email": "evan.botello@protonmail.com",
     "url": "https://github.com/evbots"
   },
   "scripts": {
-    "lint": "eslint ./src",
-    "pretty": "prettier --write 'src/**/*.js'",
-    "clean": "rm -rf dist",
+    "lint": "eslint --config ./.eslintrc.src.js ./src",
+    "lint:tests": "eslint --config ./.eslintrc.tests.js ./tests",
+    "pretty": "prettier --write '{src,tests}/**/*.js'",
+    "format": "npm run lint && npm run lint:tests && npm run pretty",
+    "clean": "rm -rf lib",
     "prebuild": "npm run clean",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest --config ./jest.config.js && jest 'index.spec.js' --config ./jest.compiled.config.js",
+    "test:build": "npm run build && npm run test",
+    "check": "npm run format && npm run test:build"
   },
   "keywords": [
     "serverless",
@@ -27,11 +32,15 @@
   "devDependencies": {
     "@babel/core": "7.6.2",
     "@babel/preset-env": "7.6.2",
+    "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "eslint": "6.5.1",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-config-prettier": "6.4.0",
     "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsdoc": "15.11.0",
+    "jest": "24.9.0",
+    "jsdoc": "3.6.3",
     "prettier": "1.18.2",
     "webpack": "4.40.2",
     "webpack-cli": "3.3.9",
