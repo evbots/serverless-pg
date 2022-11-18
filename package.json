@@ -43,7 +43,7 @@
     "jsdoc": "3.6.3",
     "prettier": "1.18.2",
     "webpack": "4.40.2",
-    "webpack-cli": "3.3.9",
+    "webpack-cli": "3.3.12",
     "webpack-node-externals": "1.7.2"
   }
 }
